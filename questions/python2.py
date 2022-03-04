@@ -31,7 +31,8 @@
 # How does a for loop iterate through a string?
 
 def one(string):
-    return ""
+    for i in string:
+        return i
 
 # -------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -52,6 +53,8 @@ def one(string):
 
 
 def two(number):
+    if number % number == 0 or number % 1 == 0:
+        return True
     return False
 
 # -------------------------------------------------------------------------------------------------------------------------------------------------
@@ -72,7 +75,7 @@ def two(number):
 
 
 def three(a):
-    return 1
+    return sum(a + (a+a) + (a+a+a) + (a+a+a+a))
 
 # -------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -102,10 +105,9 @@ def three(a):
     # Use your CLI to access the Python documentation and get help manipulating strings - help(list.insert).
     # How would you seperate a string into characters?
 
-
 def four(string1, string2):
-    return ""
-
+    zp = zip(string1, string2)
+    return zp
 # -------------------------------------------------------------------------------------------------------------------------------------------------
 
     # <QUESTION 5>
@@ -122,9 +124,13 @@ def four(string1, string2):
     # There is a module which can be used to generate random numbers, this module is called random.
     # The random module contains a function called randint.
 
-
+import random
 def five():
-    return []
+    lst = []
+    for i in range(0, 4):
+        n = random.randint(100, 200)
+        lst.append(n)
+    return lst
 
 # -------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -146,7 +152,7 @@ def five():
 
 
 def six(string):
-    return False
+    return True if string[-2:] == 'py' else False
 
 # -------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -173,7 +179,7 @@ def six(string):
 
 
 def seven(a, b, c):
-    return False
+    return True if range(a,b) == range(b,c) else False
 
 # -------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -192,9 +198,8 @@ def seven(a, b, c):
     # <HINT>
     # Use the cli to access the documentation help(str.replace)
 
-
 def eight(string,  a):
-    return ""
+    return string.replace(string[(len(string)-a)//2:(len(string)+2)//a])
 
 # -------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -214,8 +219,10 @@ def eight(string,  a):
 
 
 def nine(string1, string2):
-    return False
-
+    for chars in len(string1), len(string2):
+        if chars in len(string1) == chars in len(string2):
+            return True
+        return False
 # -------------------------------------------------------------------------------------------------------------------------------------------------
 
     # <QUESTION 10>
@@ -235,6 +242,12 @@ def nine(string1, string2):
 
 
 def ten(x, y):
-    return []
+    lst = []
+    for i in range(y):
+        lst.append([])
+        for j in range(y):
+            lst[i].append(i*j)
+    
+    return lst
 
 # -------------------------------------------------------------------------------------------------------------------------------------------------
